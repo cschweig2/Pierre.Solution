@@ -1,0 +1,14 @@
+@{
+    Layout = "_Layout";
+}
+
+@model Pierre.Models.Flavor
+
+<h1>Are you sure you want to delete this flavor?</h1>
+
+<h3>@Html.DisplayFor(model => model.FlavorType)</h3>
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Delete">
+}
+<p>@Html.ActionLink("Back To Flavor List", "Index")</p>
