@@ -1,0 +1,21 @@
+@{
+    Layout = "_Layout";
+}
+
+@model Pierre.Models.Treat
+
+<h1>Edit Treat: @Html.DisplayFor(model => model.TreatType)</h1>
+<hr>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.TreatId)
+
+    @Html.Label("Treat Type:")
+    @Html.EditorFor(model => model.TreatType)
+    <br>
+    @Html.Label("Select flavor for this treat: ")
+    @Html.DropDownList("FlavorId")
+    <br>
+    <input type="submit" value="Save Edit" class="btn btn-info">
+}
+<p>@Html.ActionLink("Back To Treat List", "Index")</p>
