@@ -11,6 +11,6 @@ namespace Pierre.Models
         public int FlavorId { get; set; }
         public string FlavorType { get; set; }
         public virtual ApplicationUser User { get; set; }
-        public ICollection<FlavorTreat> Treats { get; }
+        public virtual ICollection<FlavorTreat> Treats { get; set; }
     }
 }
