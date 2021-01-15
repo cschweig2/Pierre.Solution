@@ -111,7 +111,7 @@ namespace Pierre.Controllers
         }
 
         [Authorize]
-        public async Task<ActionResult> AddTreat(int id)
+        public async Task<ActionResult> AddFlavor(int id)
         {
             var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             var currentUser = await _userManager.FindByIdAsync(userId);
@@ -125,7 +125,7 @@ namespace Pierre.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddTreat(Treat treat, int FlavorId)
+        public ActionResult AddFlavor(Treat treat, int FlavorId)
         {
             if (FlavorId != 0)
             {
