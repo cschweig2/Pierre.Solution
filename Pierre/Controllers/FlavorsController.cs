@@ -61,5 +61,27 @@ namespace Pierre.Controllers
             ViewBag.IsCurrentUser = userId != null ? userId == thisFlavor.User.Id : false;
             return View(thisFlavor);
         }
+
+        [Authorize]
+        public async Task<ActionResult> Delete(int id)
+        {
+            var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var currentUser = await _userManager.FindByIdAsync(userId);
+            Flavor thisFlavor = _db.Flavors.Where(entry => entry.User.Id == currentUser.Id).FirstOrDefault(flavors => flavors.FlavorId == id);
+            if (thisFlavor == null)
+            {
+                return RedirectToAction("Details", new { id = id });
+            }
+            return View(thisFlavor);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            var thisFlavor = _db.Flavors.FirstOrDefault(flavors => flavors.FlavorId == id);
+            _db.Flavors.Remove(thisFlavor);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
