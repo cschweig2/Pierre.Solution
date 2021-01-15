@@ -11,5 +11,21 @@ using System.Threading.Tasks;
 
 namespace Pierre.Controllers
 {
-    
+    public class TreatsController : Controller
+    {
+        private readonly PierreContext _db;
+        private readonly UserManager<ApplicationUser> _userManager;
+
+        public TreatsController(UserManager<ApplicationUser> userManager, PierreContext db)
+        {
+            _userManager = userManager;
+            _db = db;
+        }
+
+        public ActionResult Index()
+        {
+            List<Flavor> model = _db.Treats.ToList();
+            return View(model);
+        }
+    }
 }
