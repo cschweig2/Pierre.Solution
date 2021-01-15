@@ -24,7 +24,7 @@ else
 @if (User.Identity.IsAuthenticated && ViewBag.IsCurrentUser)
 {
     <p>@Html.ActionLink("Edit This Treat", "Edit", new { id = Model.TreatId })</p>
-    <p>@Html.ActionLink("Add Treat To Treat", "AddFlavor", new { id = Model.TreatId})</p>
+    <p>@Html.ActionLink("Add Flavor To Treat", "AddFlavor", new { id = Model.TreatId})</p>
     <p>@Html.ActionLink("Delete This Treat", "Delete", new { id = Model.TreatId})</p>
 }
 <p>@Html.ActionLink("View All Treats", "Index")</p>
