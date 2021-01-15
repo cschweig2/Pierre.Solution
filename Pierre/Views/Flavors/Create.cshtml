@@ -8,10 +8,11 @@
 <hr>
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.FlavorType)
+    @Html.Label("Flavor: ")
     @Html.TextBoxFor(model => model.FlavorType)
 
     <input type="submit" value="Add Flavor" class="btn btn-info">
 }
+<br>
 <p>@Html.ActionLink("Back to List of Flavors", "Index")</p>
 <p>@Html.ActionLink("Back to Home Page", "Index", "Home")</p>
