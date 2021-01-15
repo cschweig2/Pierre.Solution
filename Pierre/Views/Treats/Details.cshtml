@@ -1,0 +1,30 @@
+@{
+    Layout = "_Layout";
+}
+
+@model Pierre.Models.Treat
+
+<h1>Treat Details</h1>
+<hr>
+@if (@Model.Flavors.Count == 0)
+{
+    <p>This treat has not been given any flavors</p>
+}
+else
+{
+    <h3>Flavors of this treat available:</h3>
+    <ul>
+    @foreach (var join in Model.Flavors)
+    {
+        <li>join.Flavors.Flavor</li>
+    }
+    </ul>
+}
+
+@if (User.Identity.IsAuthenticated && ViewBag.IsCurrentUser)
+{
+    <p>@Html.ActionLink("Edit This Treat", "Edit", new { id = Model.TreatId })</p>
+    <p>@Html.ActionLink("Add Treat To Treat", "AddFlavor", new { id = Model.TreatId})</p>
+    <p>@Html.ActionLink("Delete This Treat", "Delete", new { id = Model.TreatId})</p>
+}
+<p>@Html.ActionLink("View All Treats", "Index")</p>
