@@ -24,7 +24,7 @@ namespace Pierre.Controllers
 
         public ActionResult Index()
         {
-            List<Flavor> model = _db.Treats.ToList();
+            List<Treat> model = _db.Treats.ToList();
             return View(model);
         }
     }
