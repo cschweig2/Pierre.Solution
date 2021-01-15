@@ -11,5 +11,7 @@
     @Html.LabelFor(model => model.FlavorType)
     @Html.TextBoxFor(model => model.FlavorType)
 
-    <input type="submit" value="Add Flavor" class="btn btn-info"
+    <input type="submit" value="Add Flavor" class="btn btn-info">
 }
+<p>@Html.ActionLink("Back to List of Flavors", "Index")</p>
+<p>@Html.ActionLink("Back to Home Page", "Index", "Home")</p>
