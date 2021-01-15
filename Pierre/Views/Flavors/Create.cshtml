@@ -1,0 +1,15 @@
+@{
+    Layout = "_Layout";
+}
+
+@model Pierre.Models.Flavor
+
+<h1>Add a Flavor</h1>
+<hr>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.FlavorType)
+    @Html.TextBoxFor(model => model.FlavorType)
+
+    <input type="submit" value="Add Flavor" class="btn btn-info"
+}
