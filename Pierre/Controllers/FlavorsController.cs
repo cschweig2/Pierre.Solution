@@ -109,5 +109,30 @@ namespace Pierre.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [Authorize]
+        public async Task<ActionResult> AddTreat(int id)
+        {
+            var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var currentUser = await _userManager.FindByIdAsync(userId);
+            Flavor thisFlavor = _db.Flavors.Where(entry => entry.User.Id == currentUser.Id).FirstOrDefault(flavors => flavors.FlavorId == id);
+            if (thisFlavor == null)
+            {
+                return RedirectToAction("Details", new { id = id });
+            }
+            ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "TreatType");
+            return View(thisFlavor);
+        }
+
+        [HttpPost]
+        public ActionResult AddTreat(Flavor flavor, int TreatId)
+        {
+            if (TreatId != 0)
+            {
+                _db.FlavorTreat.Add(new FlavorTreat() { TreatId = TreatId, FlavorId = flavor.FlavorId });
+            }
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
