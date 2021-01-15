@@ -54,7 +54,7 @@ namespace Pierre.Controllers
         {
             var thisFlavor = _db.Flavors
                 .Include(flavor => flavor.Treats)
-                .thenInclude(join => join.Treat)
+                .ThenInclude(join => join.Treat)
                 .Include(flavor => flavor.User)
                 .FirstOrDefault(flavor => flavor.FlavorId == id);
             var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
