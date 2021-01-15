@@ -63,6 +63,32 @@ namespace Pierre.Controllers
         }
 
         [Authorize]
+        public async Task<ActionResult> Edit(int id)
+        {
+            var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var currentUser = await _userManager.FindByIdAsync(userId);
+            var thisFlavor = _db.Flavors.Where(entry => entry.User.Id == currentUser.Id).FirstOrDefault(flavors => flavors.FlavorId == id);
+            if (thisFlavor == null)
+            {
+                return RedirectToAction("Index");
+            }
+            ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "TreatType");
+            return View(thisFlavor);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Flavor flavor, int TreatId)
+        {
+            if (TreatId != 0)
+            {
+                _db.FlavorTreat.Add(new FlavorTreat() { TreatId = TreatId, FlavorId = flavor.FlavorId});
+            }
+            _db.Entry(flavor).State = EntityState.Modified;
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [Authorize]
         public async Task<ActionResult> Delete(int id)
         {
             var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
