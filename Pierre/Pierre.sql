@@ -1,88 +1,43 @@
-# Pierre's Sweet and Savory Treats
+CREATE DATABASE  IF NOT EXISTS `chelsea_becker` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `chelsea_becker`;
+-- MySQL dump 10.13  Distrib 8.0.19, for Win64 (x86_64)
+--
+-- Host: localhost    Database: chelsea_becker
+-- ------------------------------------------------------
+-- Server version	8.0.19
 
-#### Independent Code Review
-#### Created 01.15.2021 | Last Updated 01.15.2021
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-#### **By Chelsea Becker**
+--
+-- Table structure for table `__efmigrationshistory`
+--
 
-## Description
-_An application to market Pierre's sweet and savory treats._
-
-## Specifications
-
-<table>
-<tr>
-  <th>User Story #</th>
-  <th>User Story</th>
-  <th>Actualized</th>
-</tr>
-<tr>
-  <td>1</td>
-  <td>As a ___, I want to be able to ____ so that I can ____."</td>
-  <td>True</td>
-</tr>
-</table>
-<br>
-
-## Setup/Installation Requirements
-
-### Installing .NET Core Framework for Windows(10+) Users
-
-1. _Download the 64-bit .NET Core SDK (Software Development Kit) by following this link: https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.203-windows-x64-installer._<br>
-1a. _Follow prompts to begin your download. The download will be a .exe file. Click to install when it is finished downloading._
-2. _After clicking the downloaded .exe file, follow the prompts in the installer and use suggested default settings._
-3. _You can confirm a successful installation by opening a command line terminal and running the command_ `$ dotnet --version` _, which should return a version number._
-
-
-### Installing .NET Core Framework for Mac Users
-
-1. _Download the .NET Core SDK by following this link: https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.106-macos-x64-installer._<br>
-1a. _Follow prompts to begin your download. The download will be a .pkg file. Click to install when it is finished downloading._
-2. _After clicking the downloaded .pkg file, follow the prompts in the installer and use suggested default settings._
-3. _You can confirm a successful installation by opening a command line terminal and running the command_ `$ dotnet --version` _, which should return a version number._
-
-### Installing MySQL Workbench
-
-1. _[Download and install](https://dev.mysql.com/downloads/workbench/) the version of MySQL Workbench suitable for your machine._
-
-### View locally/Project Setup
-
-#### Clone
-1. _Follow above steps to install .NET Core._
-2. _Open web browser and go to https://github.com/cschweig2/Pierre.Solution._
-3. _After clicking the green "code" button, you can copy the URL for the repository._
-4. _Open a terminal window, such as Command Prompt or Git Bash._<br>
-  4a. _Type in this command:_ `git clone` _, followed by the URL you just copied. The full command should look like this:_ `git clone https://github.com/cschweig2/Pierre.Solution` .
-5. _View the code on your favorite text editor, such as Visual Studio Code._
-
-#### Download
-1. _Click [here](https://github.com/cschweig2/Pierre.Solution) to view project repository._
-2. _Click "Clone or download" to find the "Download ZIP" option._
-3. _Click "Download ZIP" and extract files._
-4. _Open the project in a text editor by clicking on any file in the project folder._
-
-#### Import Database in MySQL Workbench
-1. _Open MySQL Workbench and enter your password to open a server._
-2. _From the top navigation bar, follow:_ `Server > Data Import`.
-4. _Select the option_ `Import from Self-Contained File`.
-5. _Click the `...` button to navigate to the project file folder_ `Pierre` _and select_ `Pierre.sql`.
-5. _Set_ `Default Target Schema` _or create new schema_.
-6. _Select the schema objects you would like to import._
-7. _To finalize, click_ `Start Import`.
-
-#### Import Database with SQL Schema
-
-_Open MySQL Workbench and paste the following Schema Create Statement to replicate the database and its tables._
-
-```
 DROP TABLE IF EXISTS `__efmigrationshistory`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `__efmigrationshistory` (
   `MigrationId` varchar(95) NOT NULL,
   `ProductVersion` varchar(32) NOT NULL,
   PRIMARY KEY (`MigrationId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `aspnetroleclaims`
+--
 
 DROP TABLE IF EXISTS `aspnetroleclaims`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `aspnetroleclaims` (
   `Id` int NOT NULL AUTO_INCREMENT,
   `RoleId` varchar(255) NOT NULL,
@@ -92,8 +47,15 @@ CREATE TABLE `aspnetroleclaims` (
   KEY `IX_AspNetRoleClaims_RoleId` (`RoleId`),
   CONSTRAINT `FK_AspNetRoleClaims_AspNetRoles_RoleId` FOREIGN KEY (`RoleId`) REFERENCES `aspnetroles` (`Id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `aspnetroles`
+--
 
 DROP TABLE IF EXISTS `aspnetroles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `aspnetroles` (
   `Id` varchar(255) NOT NULL,
   `Name` varchar(256) DEFAULT NULL,
@@ -102,8 +64,15 @@ CREATE TABLE `aspnetroles` (
   PRIMARY KEY (`Id`),
   UNIQUE KEY `RoleNameIndex` (`NormalizedName`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `aspnetuserclaims`
+--
 
 DROP TABLE IF EXISTS `aspnetuserclaims`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `aspnetuserclaims` (
   `Id` int NOT NULL AUTO_INCREMENT,
   `UserId` varchar(255) NOT NULL,
@@ -113,8 +82,15 @@ CREATE TABLE `aspnetuserclaims` (
   KEY `IX_AspNetUserClaims_UserId` (`UserId`),
   CONSTRAINT `FK_AspNetUserClaims_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `aspnetuserlogins`
+--
 
 DROP TABLE IF EXISTS `aspnetuserlogins`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `aspnetuserlogins` (
   `LoginProvider` varchar(255) NOT NULL,
   `ProviderKey` varchar(255) NOT NULL,
@@ -124,8 +100,15 @@ CREATE TABLE `aspnetuserlogins` (
   KEY `IX_AspNetUserLogins_UserId` (`UserId`),
   CONSTRAINT `FK_AspNetUserLogins_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `aspnetuserroles`
+--
 
 DROP TABLE IF EXISTS `aspnetuserroles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `aspnetuserroles` (
   `UserId` varchar(255) NOT NULL,
   `RoleId` varchar(255) NOT NULL,
@@ -134,8 +117,15 @@ CREATE TABLE `aspnetuserroles` (
   CONSTRAINT `FK_AspNetUserRoles_AspNetRoles_RoleId` FOREIGN KEY (`RoleId`) REFERENCES `aspnetroles` (`Id`) ON DELETE CASCADE,
   CONSTRAINT `FK_AspNetUserRoles_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `aspnetusers`
+--
 
 DROP TABLE IF EXISTS `aspnetusers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `aspnetusers` (
   `Id` varchar(255) NOT NULL,
   `UserName` varchar(256) DEFAULT NULL,
@@ -156,8 +146,15 @@ CREATE TABLE `aspnetusers` (
   UNIQUE KEY `UserNameIndex` (`NormalizedUserName`),
   KEY `EmailIndex` (`NormalizedEmail`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `aspnetusertokens`
+--
 
 DROP TABLE IF EXISTS `aspnetusertokens`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `aspnetusertokens` (
   `UserId` varchar(255) NOT NULL,
   `LoginProvider` varchar(255) NOT NULL,
@@ -166,8 +163,15 @@ CREATE TABLE `aspnetusertokens` (
   PRIMARY KEY (`UserId`,`LoginProvider`,`Name`),
   CONSTRAINT `FK_AspNetUserTokens_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `flavors`
+--
 
 DROP TABLE IF EXISTS `flavors`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `flavors` (
   `FlavorId` int NOT NULL AUTO_INCREMENT,
   `FlavorType` longtext,
@@ -176,8 +180,15 @@ CREATE TABLE `flavors` (
   KEY `IX_Flavors_UserId` (`UserId`),
   CONSTRAINT `FK_Flavors_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE RESTRICT
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `flavortreat`
+--
 
 DROP TABLE IF EXISTS `flavortreat`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `flavortreat` (
   `FlavorTreatId` int NOT NULL AUTO_INCREMENT,
   `TreatId` int DEFAULT NULL,
@@ -188,8 +199,15 @@ CREATE TABLE `flavortreat` (
   CONSTRAINT `FK_FlavorTreat_Flavors_FlavorId` FOREIGN KEY (`FlavorId`) REFERENCES `flavors` (`FlavorId`) ON DELETE RESTRICT,
   CONSTRAINT `FK_FlavorTreat_Treats_TreatId` FOREIGN KEY (`TreatId`) REFERENCES `treats` (`TreatId`) ON DELETE RESTRICT
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `treats`
+--
 
 DROP TABLE IF EXISTS `treats`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `treats` (
   `TreatId` int NOT NULL AUTO_INCREMENT,
   `TreatType` longtext,
@@ -198,66 +216,15 @@ CREATE TABLE `treats` (
   KEY `IX_Treats_UserId` (`UserId`),
   CONSTRAINT `FK_Treats_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE RESTRICT
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-```
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
-#### Final Steps
-1. _Navigate to the_ `Pierre` _and_ `Pierre.Tests` _folders and enter_ `dotnet restore` _in the command line to install packages._
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
-2._After packages are installed in each of these folders, navigate to the_ `Pierre` _project folder and enter_ `dotnet run`  _in the command line to both run and build the program._
-
-## Known Bugs
-
-No known bugs at this time.
-
-## Test Specs
-
-<table>
-  <tr>
-    <th>Test #</th>
-    <th>Expected Behavior</th>
-    <th>Input</th>
-    <th>Output</th>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>Create a Bread class</td>
-    <td>Bread bread = new Bread();</td>
-    <td>bread</td>
-  </tr>
-</table>
-<br>
-
-
-## Support and contact details
-
-_If you run into any issues, you can contact the creator at chelraebecker@gmail.com, or make contributions to the code on GitHub via forking and creating a new branch._
-
-## Contributors
-
-<table>
-  <tr>
-    <th>Author</th>
-    <th>GitHub Profile</th>
-    <th>Contact Email</th>
-  </tr>
-  <tr>
-    <td>Chelsea Becker</td>
-    <td>https://github.com/cschweig2</td>
-    <td>chelraebecker@gmail.com</td>
-  </tr>
-</table>
-
-## Technologies Used
-
-_VS Code_ <br>
-_C# 7.3.0_<br>
-_.NET Core 2.2.0_<br>
-_ASP.NET Core MVC_<br>
-_Entity Framework Core 2.2.6_<br>
-_MySQL Workbench 8.0 for Windows_
-
-## Legal
-
-*This software is licensed under the MIT license.*
-
-Copyright (c) 2020 **Chelsea Becker**
+-- Dump completed on 2021-01-15 16:35:14
