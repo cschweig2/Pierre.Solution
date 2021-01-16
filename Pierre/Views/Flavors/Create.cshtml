@@ -10,7 +10,10 @@
 {
     @Html.Label("Flavor: ")
     @Html.TextBoxFor(model => model.FlavorType)
-
+    <br>
+    @Html.Label("Treat you would like this flavor to be added to: ")
+    @Html.DropDownList("TreatId", " ")
+    <br>
     <input type="submit" value="Add Flavor" class="btn btn-info">
 }
 <br>
