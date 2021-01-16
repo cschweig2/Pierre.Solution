@@ -2,7 +2,25 @@
     Layout = "_Layout";
 }
 
+@using Pierre.Models
+
 <h1>Welcome to Pierre's Sweet and Savory Treats!</h1>
+<img src="~/img/cakes.jpg" alt="Small cakes" width="80%" height="80%">
+<h3>Fresh Treats Available:</h3>
+<ul>
+@foreach (Treat treat in @Model["treats"])
+{
+    <li>@treat.TreatType</li>
+}
+</ul>
+<h3>Flavors Available: </h3>
+<ul>
+@foreach (Flavor flavor in @Model["flavors"])
+{
+    <li>@flavor.FlavorType</li>
+}
+</ul>
+<hr>
 <p>@Html.ActionLink("View Flavors", "Index", "Flavors")</p>
 <p>@Html.ActionLink("View Treats", "Index", "Treats")</p>
 <p>@Html.ActionLink("Create an Account/Login/Log Out", "Index", "Account")</p>

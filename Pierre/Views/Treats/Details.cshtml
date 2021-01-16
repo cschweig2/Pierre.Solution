@@ -28,7 +28,7 @@ else
     }
     </ul>
 }
-
+<hr>
 @if (User.Identity.IsAuthenticated && ViewBag.IsCurrentUser)
 {
     <p>@Html.ActionLink("Edit This Treat", "Edit", new { id = Model.TreatId })</p>

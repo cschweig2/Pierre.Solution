@@ -1,3 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+
 body {
-    background-color: rgb(243, 217, 222);
+    background-color: rgb(250, 220, 226);
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Yeseva', cursive;
+}
+
+h3, p {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+li {
+    text-align: center;
+    list-style: none;
+}
+
+.container {
+    text-align: center;
+}
+
+a:link, a:hover, a:visited {
+    color: black;
+    font-style: italic;
+    text-align: center;
+}
+
+.box {
+    border: black;
+    border-style: dashed;
+    border-width: 5px;
 }

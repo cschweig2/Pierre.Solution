@@ -6,6 +6,7 @@
 
 <h1>Flavor Details</h1>
 <hr>
+<div class="box">
 @if (@Model.Treats.Count == 0)
 {
     <p>This flavor has not been assigned to any treats</p>
@@ -28,7 +29,8 @@ else
     }
     </ul>
 }
-
+</div>
+<hr>
 @if (User.Identity.IsAuthenticated && ViewBag.IsCurrentUser)
 {
     <p>@Html.ActionLink("Edit This Flavor", "Edit", new { id = Model.FlavorId })</p>
