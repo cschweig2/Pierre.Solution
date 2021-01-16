@@ -102,8 +102,13 @@ namespace Pierre.Controllers
         }
 
         [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int id, int joinId)
         {
+            if (joinId != 0)
+            {
+                var thisJoinId = _db.FlavorTreat.FirstOrDefault(entry => entry.FlavorTreatId == joinId);
+                _db.FlavorTreat.Remove(thisJoinId);
+            }
             var thisTreat = _db.Treats.FirstOrDefault(treats => treats.TreatId == id);
             _db.Treats.Remove(thisTreat);
             _db.SaveChanges();
