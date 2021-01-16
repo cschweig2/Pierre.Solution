@@ -6,10 +6,9 @@
 
 <h1>Flavor Details</h1>
 <hr>
-<div class="box">
 @if (@Model.Treats.Count == 0)
 {
-    <p>This flavor has not been assigned to any treats</p>
+    <p>Sorry, we currently do not have any treats in this flavor.</p>
 }
 else
 {
@@ -29,7 +28,6 @@ else
     }
     </ul>
 }
-</div>
 <hr>
 @if (User.Identity.IsAuthenticated && ViewBag.IsCurrentUser)
 {
