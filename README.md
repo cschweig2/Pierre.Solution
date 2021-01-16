@@ -209,25 +209,6 @@ CREATE TABLE `treats` (
 
 No known bugs at this time.
 
-## Test Specs
-
-<table>
-  <tr>
-    <th>Test #</th>
-    <th>Expected Behavior</th>
-    <th>Input</th>
-    <th>Output</th>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>Create a Bread class</td>
-    <td>Bread bread = new Bread();</td>
-    <td>bread</td>
-  </tr>
-</table>
-<br>
-
-
 ## Support and contact details
 
 _If you run into any issues, you can contact the creator at chelraebecker@gmail.com, or make contributions to the code on GitHub via forking and creating a new branch._
