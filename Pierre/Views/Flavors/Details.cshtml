@@ -4,7 +4,7 @@
 
 @model Pierre.Models.Flavor
 
-<h1>Flavor Details</h1>
+<h1>Flavor Details: @Html.DisplayFor(model => model.FlavorType)</h1>
 <hr>
 @if (@Model.Treats.Count == 0)
 {
