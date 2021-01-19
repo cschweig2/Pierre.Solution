@@ -8,6 +8,10 @@
 ## Description
 _An application to market Pierre's sweet and savory treats._
 
+## Preview
+
+[![Pierres-Preview.png](https://i.postimg.cc/NfhYPg4t/Pierres-Preview.png)](https://postimg.cc/rz9vD23Z)
+
 ## Specifications
 
 <table>
