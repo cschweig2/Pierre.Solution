@@ -22,7 +22,16 @@ _An application to market Pierre's sweet and savory treats._
 </tr>
 <tr>
   <td>1</td>
-  <td>As a ___, I want to be able to ____ so that I can ____."</td>
+  <td>"As the user, I need to be able to log into my account, and only logged in users can create, update, and delete objects. All users should be able to have read functionality."</td>
+  <td>True</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>"As the user, I need to see the relationships between all treats and flavors. A treat can have many flavors, and a flavor can belong to many treats."</td>
+  <td>True</td>
+</tr>
+  <td>3</td>
+  <td>"As the user, I need to see all treats and flavors on the splash page. I can then click on links to see additional details for each treat and flavor."</td>
   <td>True</td>
 </tr>
 </table>
