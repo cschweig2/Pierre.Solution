@@ -83,6 +83,9 @@ _An application to market Pierre's sweet and savory treats._
 6. _Select the schema objects you would like to import._
 7. _To finalize, click_ `Start Import`.
 
+#### Import Database with Entity Framework Core/Command Line
+1. _Navigate to the_ `Pierre` _project folder and enter_ `dotnet ef database update` _in the command line, which will create the database in MySQL Workbench using the migrations from the_ `Migrations` _folder._
+
 #### Import Database with SQL Schema
 
 _Open MySQL Workbench and paste the following Schema Create Statement to replicate the database and its tables._
