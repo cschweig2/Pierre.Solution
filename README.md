@@ -10,7 +10,7 @@
 ### Description
 An application to market Pierre's sweet and savory treats.
 
-### Technologies Used
+### **Technologies Used**
 
 VS Code<br>
 C# 7.3.0<br>
@@ -21,11 +21,11 @@ Identity<br>
 Razor<br>
 MySQL Workbench 8.0 for Windows
 
-### Preview
+### **Preview**
 
 [![Pierres-Preview.png](https://i.postimg.cc/NfhYPg4t/Pierres-Preview.png)](https://postimg.cc/rz9vD23Z)
 
-### Specifications
+### **Specs**
 
 <table>
 <tr>
